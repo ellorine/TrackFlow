@@ -8,11 +8,7 @@ TrackFlow is a package to measure surface displacements using hillshades derived
 # Description of Files
 - config.yml references the file paths to the data and is called by the python script. 
 - 0_Code contains the code. runTrackFlow.py executes the program in the command line. The "functions" folder contains the helper functions. 
-- 1_Data contain the data necessary to reproduce the results in the paper, including the DSMs, Imagery, outputs from CIAS, and the manually derived validation vectors. 
-- 2_Optical_Flow_Results is where the optical flow outputs are stored for the whole area of interest (Geotiff) and validation points (csv).
-- 3_CIAS_Results is where the averaged CIAS results are stored as well as the interpolations of the sparse grid ouputs from CIAS. 
-- 4_Validation is where the summary tables for the validation vectors are stored. 
-- 5_Plots is where the output plots are stored.
+- 1_Data contain the data necessary to reproduce the results in the paper, including the DSMs, Imagery, outputs from CIAS, and the manually derived validation vectors.
 
 # Instructions 
 1. Download TrackFlowPackage folder and put somewhere in your file system.
@@ -21,6 +17,12 @@ TrackFlow is a package to measure surface displacements using hillshades derived
 4. Run runTrackFlow.py in Python command line. The file takes one argument, "-c", which specifies the path to the config.yml file. 
 
 e.g. **"python path_to_code/runTrackFlow.py -c path_to_config/config.yml"**
+
+# Results Folders
+- 2_Optical_Flow_Results is where the optical flow outputs are stored for the whole area of interest (Geotiff) and validation points (csv).
+- 3_CIAS_Results is where the averaged CIAS results are stored as well as the interpolations of the sparse grid ouputs from CIAS. 
+- 4_Validation is where the summary tables for the validation vectors are stored. 
+- 5_Plots is where the output plots are stored.
 
 # Understanding the Results
 - 2_Optical_Flow_Results has the results from the optical flow algorithm stored as a 9 or 11 band geotiff. Bands are as follows:
