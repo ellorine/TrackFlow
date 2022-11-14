@@ -9,7 +9,7 @@ TrackFlow is a package to measure surface displacements using hillshades derived
 - config.yml references the file paths to the data and is called by the python script. 
 - **TrackFlow** contains the code. *runTrackFlow.py* executes the program in the command line. The *functions* folder contains the helper functions. 
 - **1_Data** contain the data necessary to reproduce the results in the paper, including the DSMs, Imagery, outputs from CIAS, and the manually derived validation vectors.
-- **config.yml*** is the config file used to run *runTrackFlow.py*. Edit this file to run the code.
+- **config.yml** is the config file used to run *runTrackFlow.py*. Edit this file to run the code.
 
 # Instructions 
 1. Download **TrackFlow** and **1_Data** folders and the **config.yml** file and put into an overarching folder somewhere in your file system.
