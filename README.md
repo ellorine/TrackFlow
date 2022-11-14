@@ -18,7 +18,9 @@ TrackFlow is a package to measure surface displacements using hillshades derived
 1. Download TrackFlowPackage folder and put somewhere in your file system.
 2. Ensure that required Python packages are installed
 3. Edit the "config.yml" file inside of the trackflowpackage folder. Edit the windows and/or linux drivemaps to match your system. Edit the directory path to the location of the TrackFlowPackage. 
-4. Run runTrackFlow.py in Python command line. The file takes one argument, "-c", which specifies the path to the config.yml file. E.g. "python path_to_code/runTrackFlow.py -c path_to_config/config.yml"
+4. Run runTrackFlow.py in Python command line. The file takes one argument, "-c", which specifies the path to the config.yml file. 
+
+e.g. **"python path_to_code/runTrackFlow.py -c path_to_config/config.yml"**
 
 # Understanding the Results
 - 2_Optical_Flow_Results has the results from the optical flow algorithm stored as a 9 or 11 band geotiff. Bands are as follows:
