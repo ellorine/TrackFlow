@@ -1,0 +1,49 @@
+
+#### Project Configuration ######
+project:
+  drivemap:
+    win32: C:/ #Edit this drivemap (if using windows machine)
+    linux: /run/media/user_name/C/ #Edit this drivemap (if using linux machine)
+  directory: C:/....path_to_trackflowpackagefolder/TrackFlowPackage #Edit this
+
+#################################
+
+######## Source Data ############
+# File paths to data from project[directory]
+
+## DSMs
+dsm1: 
+  path: 1_Data/1_DSM/2018/20180207_QLDC_dart_2m_hae_snap_adj1.0022-0.52_tehoro_dsm.tif
+  date: 2018-02-07
+dsm2:
+  path: 1_Data/1_DSM/2020/20200208_olivine_aat_v1_mgmv13_bP_Blend-PC_proj_2m_er2m_fill50-DEM_ext_snap_tehoro_dsm.tif
+  date: 2020-02-09
+  aspectpath: 1_Data/1_DSM/2020/tehoro_dem_2020_resample_50m_cubic_aspect_resample_2.0m_snap.tif #50m resolution aspect raster 
+
+## Orthos
+ortho1:
+  path: 1_Data/2_Imagery/2018/20180000_otagorural_30cm_mosaic_tehoro_ortho_intensity.tif
+  date: 2018-02-07
+ortho2: 
+  path: 1_Data/2_Imagery/2020/20200208_olivine_aat_v1_mgmv13_bP_Blend_orthomosaic_gdalwarp_0.5m_fuse_vrt_cos4_enhanced_snap_tehoro_ortho_intensity.tif
+  date: 2020-02-09
+
+## CIAS Results
+cias:
+  folderpath: 1_Data/3_CIAS
+
+## Auxilliary
+validation:
+  vectorpath: 1_Data/4_Validation/validation_vectors.csv
+  vectorxypoints: 1_Data/4_Validation/validation_xy_points.csv
+
+###################################
+
+######### Parameters #############
+
+parameters:
+  sigma_c: 0.5 #standard deviation of the coregistration error of the DSMs
+  z_sig: 1.96 #Significance level for pixels to be classified as stationary/moving or not 
+  small_angle: 20 #Expected angle standard deviation for moving pixel 
+
+
