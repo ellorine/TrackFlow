@@ -40,7 +40,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     # #### 3. Create Folders for Results ####
     project_directory = utils.mapSystemDrive(Path(config['project']['directory']), config)
     
-    if False:
+    if True:
         os.makedirs(project_directory / "2_Optical_Flow_Results", exist_ok = True)
         os.makedirs(project_directory / "2_Optical_Flow_Results" / "validation", exist_ok = True)
         os.makedirs(project_directory / "3_CIAS_Results", exist_ok = True)
@@ -54,7 +54,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     
     # ## A. RUN OPTICAL FLOW FOR SINGLE HILLSHADE PAIR
     
-    if False:
+    if True:
         list_of_azimuths = [315]
         list_of_angles = [45]
         debut = dt.datetime.today()  
@@ -66,7 +66,7 @@ def runTrackFlow(config_path, global_overwrite = False):
         
     # ### B. RUN OPTICAL FLOW FOR 24 HILLSHADES
     
-    if False: 
+    if True: 
         list_of_azimuths = [0,45,90,135,180,225,270,315]
         list_of_angles = [30,45,60]
         debut = dt.datetime.today()  
@@ -79,7 +79,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     
     # ### C. RUN OPTICAL FLOW FOR ORTHO PAIR
     
-    if False: 
+    if True: 
         debut = dt.datetime.today()  
         print("\n Running Optical Flow on Ortho Pair...")
         tr.runPairwiseOpticalFlow(list_of_orthos, list_of_capture_dates, output_dir, tag="ortho", dem_proc=False)
@@ -89,7 +89,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     
     # ### D. RUN OPTICAL FLOW FOR 168 HILLSHADE PAIRS
     
-    if False:
+    if True:
         list_of_azimuths = [0, 15, 30,45, 60,75, 90,105, 120,135, 150,165, 180,195, 210,225, 240,255, 270,285,300, 315,330,345]
         list_of_angles = [30,35,40,45,50,55,60]
         debut = dt.datetime.today()  
@@ -101,7 +101,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     
     ### 5. Filter optical flow predictions (24 HS, 168 HS) ####
     
-    if False: 
+    if True: 
         debut = dt.datetime.today()  
         print("\n Filtering Optical Flow Predictions...")
         pred_to_filter = []
@@ -114,7 +114,7 @@ def runTrackFlow(config_path, global_overwrite = False):
         print("temps d'execution = %fs" % (fin-debut).total_seconds())
         
     ### 6. Filter CIAS results using hillshading method ####
-    if False:
+    if True:
         input_dir = project_directory / "1_Data" / "3_CIAS"
         output_dir = project_directory / "3_CIAS_Results"
         
@@ -137,7 +137,7 @@ def runTrackFlow(config_path, global_overwrite = False):
         print("temps d'execution = %fs" % (fin-debut).total_seconds())
     
     # ### 7. Resample sparse CIAS results to full field #### 
-    if False: 
+    if True: 
         debut = dt.datetime.today()  
         print("\n Resampling Sparse Grids of CIAS predictions to full field...")
         output_dir = project_directory / "3_CIAS_Results"
@@ -190,7 +190,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     ### 8. Validation Table Statistics #####
     
     ### A. OPTICAL FLOW ####
-    if False:
+    if True:
         #Extract validation subsets
         debut = dt.datetime.today()  
         print("\n Writing Validation Statistics to Summary Tables...")
@@ -201,7 +201,7 @@ def runTrackFlow(config_path, global_overwrite = False):
         ss.summaryTableOpticalFlow(project_directory / "2_Optical_Flow_Results" / "validation", validation_vectors, project_directory / "4_Validation")
     
     # ### B. CROSS CORRELATION #### 
-    if False:
+    if True:
         ss.summaryTableNCC(project_directory / "3_CIAS_Results" / "validation", 
                            project_directory / "1_Data" / "3_CIAS" / "results_validation", validation_vectors, project_directory / "4_Validation")   
         
@@ -219,7 +219,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     folder = project_directory / "2_Optical_Flow_Results"
     cc_folder = project_directory / "3_CIAS_Results" / "fullfield" / "geotiff"
     
-    if False:
+    if True:
         debut = dt.datetime.today()  
         print("Plotting unmasked 3-D Velocities to clipped extent...")
         thplt.plot3DVelocitiesClippingExtent_3x2([folder / "Optical_Flow_Pair_2018-02-07_2020-02-09_ortho.tif", cc_folder / "ncc_ortho_image.tif",
@@ -235,7 +235,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     
     ### B. MASKED VELOCITIES ####
     
-    if False:
+    if True:
         debut = dt.datetime.today()  
         print("\n Plotting masked 3-D Velocities...")
         data = [folder / "Optical_Flow_Pair_2018-02-07_2020-02-09_24_hs.tif", 
@@ -249,7 +249,7 @@ def runTrackFlow(config_path, global_overwrite = False):
     
     ### C. Error Band Correlation Coefficient Density
     
-    if False:
+    if True:
         thplt.plotErrorBandCorrCoeffDensity(project_directory / "3_CIAS_Results" / "fullfield" / "ncc_average_hillshade.csv", outfolder)
     
     ### D. VALIDATION PREDICTION SCATTER ####
