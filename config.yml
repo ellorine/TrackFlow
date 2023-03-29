@@ -42,7 +42,7 @@ validation:
 ######### Parameters #############
 
 parameters:
-  sigma_c: 0.5 #standard deviation of the coregistration error of the DSMs
+  sigma_c: 0.89 #standard deviation of the coregistration error of the DSMs
   z_sig: 1.96 #Significance level for pixels to be classified as stationary/moving or not 
   small_angle: 20 #Expected angle standard deviation for moving pixel 
 
